@@ -19,9 +19,8 @@ const DateSelector: React.FC = () => {
     <div className="flex gap-2 overflow-x-auto bg-white p-4">
       {dates.map((item, index) => (
         <button
-          className={`rounded-md border px-4 py-2 text-center ${
-            selectedDate === item.day ? 'bg-blue-500 text-white' : 'border-gray-300 bg-white text-gray-800'
-          }`}
+          className={`rounded-md border px-4 py-2 text-center ${selectedDate === item.day ? 'bg-blue-500 text-white' : 'border-gray-300 bg-white text-gray-800'
+            }`}
           key={index}
           onClick={() => setSelectedDate(item.day)}
         >
