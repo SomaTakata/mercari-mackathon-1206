@@ -29,37 +29,37 @@ const ProductCard: React.FC = () => {
         <div className="mt-3 flex w-full gap-3 overflow-x-scroll">
           {/* いいねボタン */}
           <div className="flex items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2">
-            <Heart className="size-6" />
+            <Heart className="size-5" />
             <span className="text-sm">5</span>
           </div>
 
           {/* コメントボタン */}
           <div className="flex items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2">
-            <MessageSquare className="size-6" />
+            <MessageSquare className="size-5" />
             <span className="text-sm">コメント</span>
           </div>
 
           {/* 希望価格ボタン */}
           <div className="flex items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2">
-            <DollarSign className="size-6" />
+            <DollarSign className="size-5" />
             <span className="text-sm">希望価格</span>
           </div>
 
           {/* コピー出品ボタン */}
           <div className="flex items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2">
-            <Copy className="size-6" />
+            <Copy className="size-5" />
             <span className="text-sm">コピー出品</span>
           </div>
 
           {/* シェアボタン */}
           <div className="flex items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2">
-            <Copy className="size-6" />
+            <Copy className="size-5" />
             <span className="text-sm">シェア</span>
           </div>
 
           {/* 保存ボタン */}
           <div className="flex items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2">
-            <Heart className="size-6" />
+            <Heart className="size-5" />
             <span className="text-sm">保存</span>
           </div>
         </div>

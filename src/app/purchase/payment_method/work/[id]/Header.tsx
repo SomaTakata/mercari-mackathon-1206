@@ -1,11 +1,14 @@
+'use client';
 import { ChevronLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const Header: React.FC = () => {
+  const router = useRouter();
   return (
     <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between border-b border-gray-200 bg-white p-4">
       {/* 左側の戻るボタン */}
-      <button className="flex items-center text-black">
+      <button className="flex items-center text-black" onClick={() => router.push('/purchase/payment_method/work')}>
         <ChevronLeft className="size-6" />
       </button>
 

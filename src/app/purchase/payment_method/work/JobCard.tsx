@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 const JobCard: React.FC = () => {
@@ -44,6 +45,7 @@ const JobCard: React.FC = () => {
     },
   ];
 
+  const router = useRouter();
   return (
     <div className="bg-gray-100  p-4">
       {/* 横二列のグリッド */}
@@ -52,12 +54,15 @@ const JobCard: React.FC = () => {
           <div
             className="relative cursor-pointer overflow-hidden rounded bg-white shadow"
             key={index}
-            onClick={() => setSelectedCard(selectedCard === index ? null : index)}
+            onClick={() => {
+              setSelectedCard(selectedCard === index ? null : index);
+              router.push('/purchase/payment_method/work/123456');
+            }}
           >
             {/* オーバーレイ */}
             {selectedCard === index && (
               <div className="absolute inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
-                <p className="text-lg font-bold text-white">応募中</p>
+                <p className="text-lg font-bold text-white">追加済</p>
               </div>
             )}
 
