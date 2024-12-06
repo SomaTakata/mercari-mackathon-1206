@@ -1,10 +1,13 @@
+'use client';
 import { ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 import Footer from './Fotter';
 import Header from './Header';
 
 const PaymentDetails: React.FC = () => {
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-gray-100 pb-[55px] pt-[60px]">
       <Header />
@@ -85,7 +88,7 @@ const PaymentDetails: React.FC = () => {
             <p className="rounded-md bg-red-600 px-2 py-0.5 text-xs font-bold text-white">new !</p>
             <p className="text-sm  font-semibold  text-gray-700">はたらく</p>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center" onClick={() => router.push('/purchase/payment_method/work')}>
             <span className="text-sm text-gray-700">¥5,081</span>
             <ChevronRight className="size-6 text-gray-700" />
           </div>
