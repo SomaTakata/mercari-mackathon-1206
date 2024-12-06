@@ -83,7 +83,7 @@ const PaymentDetails: React.FC = () => {
         <div className="flex items-center justify-between border-b border-gray-200 p-4">
           <div className="flex items-center gap-2">
             <p className="rounded-md bg-red-600 px-2 py-0.5 text-xs font-bold text-white">new !</p>
-            <p className="text-sm  font-semibold  text-gray-700">はたらくの使用</p>
+            <p className="text-sm  font-semibold  text-gray-700">はたらく</p>
           </div>
           <div className="flex items-center">
             <span className="text-sm text-gray-700">¥5,081</span>
