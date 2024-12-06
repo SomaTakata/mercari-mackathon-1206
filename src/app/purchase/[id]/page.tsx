@@ -8,6 +8,12 @@ import Header from './Header';
 
 const PaymentDetails: React.FC = () => {
   const router = useRouter();
+  const [workPrice, setWorkPrice] = React.useState(4081);
+  const itemPrice = 10000; // 商品代金
+  const inspectionFee = 4300; // 鑑定手数料
+
+  const paymentAmount = workPrice > 0 ? itemPrice + inspectionFee - workPrice : itemPrice + inspectionFee;
+
   return (
     <div className="min-h-screen bg-gray-100 pb-[55px] pt-[60px]">
       <Header />
@@ -69,7 +75,7 @@ const PaymentDetails: React.FC = () => {
         <div className="flex items-center justify-between border-b border-gray-200 p-4">
           <p className="text-sm  font-semibold  text-gray-700">メルペイ残高の使用</p>
           <div className="flex items-center">
-            <span className="text-sm text-gray-700">¥5,081</span>
+            <span className="text-sm text-gray-700">¥0</span>
             <ChevronRight className="size-6 text-gray-700" />
           </div>
         </div>
@@ -89,7 +95,7 @@ const PaymentDetails: React.FC = () => {
             <p className="text-sm  font-semibold  text-gray-700">はたらく</p>
           </div>
           <div className="flex items-center" onClick={() => router.push('/purchase/payment_method/work')}>
-            <span className="text-sm text-gray-700">¥5,081</span>
+            <span className="text-sm text-gray-700">¥{workPrice}</span>
             <ChevronRight className="size-6 text-gray-700" />
           </div>
         </div>
@@ -110,10 +116,27 @@ const PaymentDetails: React.FC = () => {
         </div>
 
         {/* メルペイ残高の使用 */}
-        <div className="flex items-center justify-between border-b border-gray-200 p-4">
-          <p className="text-sm  font-semibold  text-gray-700">支払金額</p>
-          <span className="font-bold text-gray-700">¥5,081</span>
-        </div>
+        {workPrice > 0 ? (
+          <div className="flex flex-col gap-3 border-b p-4">
+            <div className="flex items-center justify-between  ">
+              <p className="text-sm font-semibold text-gray-700">商品代金</p>
+              <span className="font-medium  text-gray-700">¥{itemPrice + inspectionFee}</span>
+            </div>
+            <div className="flex items-center justify-between  ">
+              <p className="text-sm font-semibold text-gray-700">はたらく</p>
+              <span className="font-medium text-gray-700">- ¥{workPrice}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-semibold text-gray-700">支払金額</p>
+              <span className="text-lg font-bold  text-gray-700">¥{paymentAmount}</span>
+            </div>
+          </div>
+        ) : (
+          <div className="flex items-center justify-between border-b border-gray-200 p-4">
+            <p className="text-sm  font-semibold  text-gray-700">支払金額</p>
+            <span className="font-bold text-gray-700">¥5,081</span>
+          </div>
+        )}
       </div>
       <Footer />
     </div>
