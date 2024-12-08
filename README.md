@@ -1,3 +1,17 @@
+## 🛠技術スタック
+
+- Frontend : [Next.js](https://nextjs.org/)
+- Styling : [TailwindCSS](https://tailwindcss.com/)
+- Icons : [lucideIcon](https://lucide.dev/icons/)
+- Lintter・Formatter :
+  - [ESLint](https://eslint.org/)
+  - [Prettier](https://prettier.io/)
+  - [Husky](https://typicode.github.io/husky/)
+  - [lint-staged](https://github.com/lint-staged/lint-staged)
+  - [markuplint](https://markuplint.dev/ja/)
+  - [secretlint](https://github.com/secretlint/secretlint)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
